@@ -3,6 +3,7 @@ const express = require ('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const PORT = process.env.PORT || 3333;
 var app = express();
 
 hbs.registerPartials(__dirname+'/views/partials');
@@ -48,7 +49,7 @@ app.get('/bad', (req, res) => {
         error: 'Error processing request'
     });
 })
-const PORT = 3333;
+
 app.listen(PORT, () => {
     console.log(`Sever is up in port ${PORT}!`);
 });
